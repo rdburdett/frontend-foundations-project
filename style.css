@@ -1,6 +1,5 @@
 /* -------  General Styles ------- */
 html {
-  /* background-color: darkgray; */
   margin: 0;
   padding: 0;
 }
@@ -63,7 +62,6 @@ form {
 }
 
 .img-box{
-  border-radius: 10px;
   overflow: hidden;
   margin: 0;
   padding: 0;
@@ -89,8 +87,6 @@ form .item {
 .group {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
-  /* align-items: center; */
   margin: 0;
 }
 
