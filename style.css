@@ -1,6 +1,8 @@
 /* -------  General Styles ------- */
 html {
-  background-color: darkgray;
+  /* background-color: darkgray; */
+  margin: 0;
+  padding: 0;
 }
 body {
   font-family: "Lato", sans-serif;
@@ -34,13 +36,62 @@ section.alternate-background {
 
 main img {
   width: 100px;
+  display: block;
 }
 
+fieldset {
+  border: 0;
+}
+
+form {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+  object-fit: cover;
+}
+
+.item img:hover {
+  width: 100%;
+  transform: scale(1.01);
+  transition: 0.1s all ease-in-out;
+}
+
+.img-box{
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 5px;
+}
+
+
 /* ---  Groups & Items --- */
+form .group {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+form .item {
+  display: flex;
+  /* move label beside field */
+  flex-direction: row;
+  /* label and item move to opposite sides of box */
+  justify-content: space-between;
+}
 
 .group {
   display: flex;
   flex-direction: column;
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  margin: 0;
 }
 
 .item {
@@ -50,6 +101,7 @@ main img {
 
 .item-double {
   flex: 2;
+  margin: 10px;
 }
 
 /* -------  Navigation ------- */
@@ -66,6 +118,10 @@ header {
   color: #fff;
 }
 
+header nav ul {
+  display: flex;
+  justify-content: center;
+}
 header nav ul li {
   list-style-type: none;
 }
@@ -89,11 +145,12 @@ form {
 
 form label {
   font-weight: bold;
+  margin-right: 5px;
 }
 
 form select,
 form input {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   width: 180px;
 }
 
@@ -119,3 +176,85 @@ footer p {
 }
 
 /* -------  Media Query ------- */
+
+/* All Desktop */
+
+@media all and (min-width: 480px) {
+
+  header h1 {
+    font-size: 48;
+    padding-top: 0;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+    align-items: center;
+  }
+
+  .group {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .item {
+    flex-direction: column;
+  }
+  
+  .about .group {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .about .item {
+    min-width: 100px;
+  }
+
+  /* Form */
+
+  form {
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  form .group {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  form .item {
+    /* Move label above field */
+    flex-direction: column;
+  }
+
+}
+
+/* Narrow Desktop */
+@media all and (min-width: 480px) and (max-width: 675px) {
+  
+  .break {
+    visibility: visible;
+    flex-grow: 1;
+    flex-basis: 100%;
+  }
+
+  header {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  form .group {
+    flex-direction: row;
+  }
+
+  .about {
+    flex-direction: row;
+  }
+
+  .inner-group {
+    display: flex;
+    flex-direction: column;
+  }
+}
