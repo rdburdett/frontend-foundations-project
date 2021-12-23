@@ -8,8 +8,7 @@ body {
   font-family: "Lato", sans-serif;
 }
 
-html,body
-{
+html,body {
     width: 100%;
     height: 100%;
     margin: 0px;
@@ -84,6 +83,7 @@ form .group {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  align-items:center;
 }
 
 form .item {
@@ -92,6 +92,10 @@ form .item {
   flex-direction: row;
   /* label and item move to opposite sides of box */
   justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  margin:auto;
 }
 
 .group {
@@ -115,8 +119,9 @@ form .item {
 
 header {
   background-color: #ff385c;
-  padding: 20px 20px 0 20px;
+  padding: 10px 20px;
   text-align: center;
+  box-sizing: content-box;
 }
 
 .logo {
@@ -128,6 +133,11 @@ header {
 header nav ul {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+nav {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 header nav ul li {
   list-style-type: none;
@@ -190,14 +200,14 @@ footer p {
 
   header h1 {
     font-size: 48;
-    padding-top: 0;
+    /* padding-top: 0; */
   }
 
   header {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    padding: 0 30px;
-    align-items: center;
+    /* padding: 0 30px; */
   }
 
   .group {
@@ -228,6 +238,7 @@ footer p {
   form .group {
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
   }
 
   form .item {
@@ -235,6 +246,23 @@ footer p {
     flex-direction: column;
   }
 
+}
+
+/* Tiny Screen */
+@media all and (max-width: 390px) {
+  .logo {
+    font-family: "Pangolin", cursive;
+    font-size: 48px;
+    color: #fff;
+  }
+  section {
+    padding: 5px;
+    box-sizing: content-box;
+  }
+  form .item {
+    flex-direction: column;
+    /* align-items: center; */
+  }
 }
 
 /* Narrow Desktop */
